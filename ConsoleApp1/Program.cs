@@ -2,12 +2,17 @@
 
 namespace VirtualExample
 {
-    interface IVehiclePara
+    public interface IVehiclePara
     {
+        public abstract void TestWriteDeclaration();
 
+        public void TestWrite()
+        {
+            Console.WriteLine("intf wrtline");
+        }
     }
 
-    class Vehicle : IVehiclePara
+    public class Vehicle : IVehiclePara
     {
         public double distance = 0.0;
         public double hour = 0.0;
@@ -32,6 +37,11 @@ namespace VirtualExample
             double speed = 0.0;
             speed = distance / hour;
             Console.WriteLine("Vehicle Speed is {0:0.00}", speed);
+        }
+
+        public void TestWriteDeclaration()
+        {
+            throw new NotImplementedException();
         }
     }
 
